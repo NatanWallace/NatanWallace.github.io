@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>About Me - Natan Wallace</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Natan Wallace - Data Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<div id="BackToTop" style="position: relative; top: -50px;"></div>
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li><a href="generic.html">About Me</a></li>
+							<li class="active"><a href="RFM.html">RFM Analysis</a></li>
+
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/nathanwallace0/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/NatanWallace/My-Projects" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									
+									<h1>RFM Analysis</h1>
+
+								</header>
+									<div id="table-of-contents">
+										<h2>Table of Contents</h2>
+										<ul>
+											<li><a href="#Introduction">Introduction</a></li>
+											<li><a href="#Objective">Objective</a></li>
+											<li><a href="#Methodology">Methodology</a></li>
+											<li><a href="#Cluster">Cluster Analysis and Visualization</a></li>
+											<li><a href="#Insights">Strategic Insights and Recommendations</a></li>
+											<li><a href="#Implementation">Conclusion and Implementation</a></li>
+										</ul>
+									</div>
+
+								<h2>Project Overview</h2>
+								<div id="Introduction" style="position: relative; top: -50px;"></div>
+								<h3>Introduction</h3>
+
+								<p>
+									This project is a real-life application that I conducted at my current job aimed at enhancing existing patient revenue. It
+									involved sophisticated data analysis techniques including RFM Analysis and KMeans
+									clustering to segment our patient base effectively and uncover targeted strategies for increasing their engagement and
+									spending.
+								</p>
+								<div id="Objective" style="position: relative; top: -50px;"></div>
+								<h3>Objective</h3>
+								<p>
+									The main objective of this project was to leverage advanced analytics to improve revenue generation from existing
+									patients. By identifying distinct segments within our patient population, we aimed to tailor marketing efforts and
+									service offerings to meet the unique needs and behaviors of each group.
+								</p>
+								<div id="Methodology" style="position: relative; top: -50px;"></div>
+								<h3>Methodology</h3>
+								<h4>Theoretical Framework</h4>
+								<p><strong>RFM Analysis:</strong> RFM stands for Recency, Frequency, and Monetary value, a marketing analysis tool used to quantify customer value by
+								examining how recently a customer has purchased (recency), how often they purchase (frequency), and how much the
+								customer spends (monetary). It is particularly useful in segmentation by identifying customers who are more likely to
+								respond to promotions and other marketing efforts.
+								</p>
+								<p><strong>KMeans Clustering:</strong> KMeans is an unsupervised learning algorithm that solves the clustering problem. It classifies a given data set through
+								a certain number of clusters (assume k clusters) fixed a priori. It works iteratively to assign each data point to one
+								of K groups based on the features that are provided.
+								</p>
+								<h4>Data Collection and Preparation</h4>
+								<p><strong>Data Source:</strong> Sales Data collected since January 1, 2023.</p>
+								<p><strong>Data Cleaning Steps:</strong>
+								<ul>
+									<li>Removing Non-Service Data: Data unrelated to services was excluded to focus analysis on relevant transactions.
+									</li>
+									<li>Monetary Column Transformation: Transformed monetary columns to integers to facilitate quantitative analysis.
+									</li>
+									<li>Outlier Management: Instead of removing outliers, data points beyond the 75th percentile were separated for
+										individual analysis to ensure that high-value insights were not discarded.</li>
+								</ul>
+								</p>
+
+
+								<h4>Clustering Preparation</h4>
+								<ul>
+									<li><strong>Determination of Cluster Number:</strong>
+										<ul>
+											<p>Inertia and Silhouette Scores: To determine the optimal number of clusters, I conducted tests
+												measuring inertia (sum of squared distances of samples to their closest cluster center) and
+												silhouette scores (measure of how similar an object is to its own cluster compared to other
+												clusters). Analysis of these scores indicated that the difference between having five and six
+												clusters was minimal, hence five was selected as the optimal number.</p>
+										</ul>
+									</li>
+									<li>Feature Scaling: Prior to clustering, features were scaled to ensure that each feature contributed equally
+										to the analysis, preventing any one feature from dominating the others due to its scale.</li><br>
+									<li><strong>KMeans Implementation:</strong>
+										<ul>
+											<p>3D Plot Visualization: After applying the KMeans clustering, I visualized the clusters using a 3D
+												plot to illustrate the segmentation based on the three features (Recency, Frequency, Monetary).</p>
+												<style>
+													img.responsive {
+														width: 100%;
+														/* Makes the image take the full width of its container */
+														height: auto;
+														/* Maintains the aspect ratio of the image */
+													}
+												</style>
+												<img src="images/RFM/scaledplot.png" alt="3D Plot Visualization" class="responsive">
+										</ul>
+									</li>
+								</ul>
+								<div id="Cluster" style="position: relative; top: -50px;"></div>
+								<h3>Cluster Analysis and Visualization</h3>
+								<p>After implementing the KMeans clustering, the analysis yielded distinct patient groups each characterized by
+									specific behavioral patterns:</p>
+								<ol>
+									<li><strong>Violin Graphs for Feature Distribution:</strong>
+										<ul>
+											<p>Three violin graphs displayed the distributions of Recency, Frequency, and Monetary Value for each
+												cluster. These graphs highlighted the variation in patient behavior within each cluster by showing
+												both the range and density of each feature.</p>
+												<img src="images/RFM/clusters.png" alt="3D Plot Visualization" class="responsive">
+										</ul>
+									</li>
+									<li><strong>Outlier Analysis:</strong>
+										<ul>
+											<p>Outliers were analyzed separately and categorized into three additional clusters. Each outlier
+												cluster was visualized using violin graphs to detail their distinct attributes compared to the
+												general patient population.</p>
+												<img src="images/RFM/outliers.png" alt="3D Plot Visualization" class="responsive">
+										</ul>
+									</li>
+									<li><strong>Summary of Clusters:</strong>
+										<ul>
+											<p>A comprehensive graph summarized the average values of Recency, Frequency, and Monetary for each
+												cluster, alongside the number of patients in each group. This visualization facilitated a clear
+												understanding of the defining traits of each cluster.</p>
+												<img src="images/RFM/cluster_dist.png" alt="3D Plot Visualization" class="responsive">
+										</ul>
+									</li>
+								</ol>
+								<div id="Insights" style="position: relative; top: -50px;"></div>
+								<h3>Strategic Insights and Recommendations</h3>
+								<p>The insights gained from the clustering process led to targeted recommendations that I suggested for each patient cluster:</p>
+								<h4>Outliers:</h4>
+								<ul>
+									<li><strong>Cluster (-1) - Monetary Outliers:</strong>
+										<ul>
+											<p>Patients in this cluster spend significantly with the practice. Recommended actions include
+												rewarding these patients with exclusive perks such as Glamfam memberships or product baskets, and
+												ensuring they receive exceptional service during visits.</p>
+										</ul>
+									</li>
+									<li><strong>Cluster (-2) - Frequency Outliers:</strong>
+										<ul>
+											<p>These patients visit frequently but spend less. Strategies such as offering package deals or
+												discounts could potentially increase their spending.</p>
+										</ul>
+									</li>
+									<li><strong>Cluster (-3) - Monetary and Frequency Outliers:</strong>
+										<ul>
+											<p>These are the most valuable patients, characterized by both frequent visits and high spending.
+												Similar to Cluster (-1), these patients should be offered top-tier rewards and VIP care.</p>
+										</ul>
+									</li>
+								</ul>
+								<h4>Non-Outliers:</h4>
+								<ul>
+									<li><strong>Cluster 2:</strong>
+										<ul>
+											<p>Comprising about 1,800 patients, these individuals have not engaged recently, with an average last
+												visit around 17 months ago. They are low on both visit frequency and spending. Suggested outreach
+												includes re-engagement through cost-effective channels like SMS or email.</p>
+										</ul>
+									</li>
+									<li><strong>Cluster 0:</strong>
+										<ul>
+											<p>Includes approximately 1,500 patients who visit 1-3 times annually and spend below the average. The
+												focus here should be on upselling during their visits without allocating special resources.</p>
+										</ul>
+									</li>
+									<li><strong>Cluster 1:</strong>
+										<ul>
+											<p>About 900 patients who visit 3-4 times annually. They are potential candidates for moving up from a
+												middle-tier to a higher-tier spending group through strategic engagement and offers.</p>
+										</ul>
+									</li>
+									<li><strong>Cluster 3:</strong>
+										<ul>
+											<p>Around 500 patients who were previously high-value but have shown reduced engagement recently.
+												Efforts should be made to re-engage these patients as they have demonstrated potential to be high
+												spenders.</p>
+										</ul>
+									</li>
+									<li><strong>Cluster 4:</strong>
+										<ul>
+											<p>Represents about 500 of our best current patients, visiting 4-6 times annually and spending above
+												average. They should be recognized with special rewards and possibly exclusive offers to foster
+												loyalty.</p>
+										</ul>
+									</li>
+								</ul>
+								<div id="Implementation" style="position: relative; top: -50px;"></div>
+								<h3>Conclusion and Implementation</h3>
+								<p>Following the comprehensive analysis and strategic planning, each patient cluster was assigned specific labels that
+								reflect their characteristics and potential value to the practice. This labeling process was not only a theoretical
+								exercise but also led to actionable outputs:</p>
+								<ul>
+									<li><strong>Final Product Delivery:</strong> Each patient in our database was tagged with their respective cluster label. This tagging system has been integrated
+									into our CRM system, enabling personalized marketing approaches and tailored service
+									delivery.</li>
+									<li><strong>Operational Impact:</strong> The integration of these labels allows our staff—from the front desk to service providers—to instantly recognize and
+									adapt their interactions based on the categorized needs and behaviors of each patient. This personalized approach is
+									designed to enhance patient satisfaction and loyalty, thereby increasing overall revenue.
+									</li>
+									<li><strong>Strategic Follow-up:</strong> The labels also serve as a key tool for ongoing marketing strategies and service adjustments. They enable our marketing
+									team to craft targeted campaigns and promotions that are specifically designed to engage each segment effectively, from
+									re-engaging lost patients to enhancing the loyalty of high-value customers.</li>
+								</ul>
+								<p><strong>This systematic labeling and implementation ensure that my insights translate into concrete actions and measurable
+								improvements, aligning with our overall goal of enhancing existing patient revenue through informed, data-driven
+								decisions.</strong></p>
+								<img src="images/RFM/table_with_added_label.png" alt="3D Plot Visualization" class="responsive">
+								<br><br>
+
+
+								<a href="#BackToTop">Back to the top</a>
+
+								
+							</section>
+
+					</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+		
+				<section class="split contact">
+					<section class="alt">
+						<h3>Location</h3>
+						<p>
+						Fort Collins, CO </p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="#">nathanwallace131@gmail.com</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+						
+							<li><a href="https://www.linkedin.com/in/nathanwallace0/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/NatanWallace/My-Projects" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
+			
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
